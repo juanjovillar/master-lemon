@@ -1,0 +1,59 @@
+@import "fonts";
+@import "mixins";
+
+//Referenced Theme, change accordingly
+@import "themes/theme-b-variables";
+
+main{
+    padding: 2em;
+}
+
+h1{
+    text-align: center;
+    font-family: $default-font-family;
+}
+
+.box-container{
+    display: inline-block;
+    text-align: center;
+}
+
+.box{
+    @include  center-text(10rem);
+    @include text-ellipsis;    
+    box-sizing: border-box;
+    width: 10rem;      
+    background-color: $base-color;    
+    color: $base-text-color;   
+    border-radius: $base-border-radius;    
+    border: 0.1em solid $base-border-color;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+
+    &--important{
+        @include dark-color(3);
+    }
+
+    &--warning{
+        @include light-color(3);
+    }
+
+    &--shadow{
+        @include box-shadow($shadow-position, $base-border-color);
+        background-color: white; 
+        color: black;       
+    }
+}
+
+.text{
+    font-size: 1.5rem;
+
+    &--primary{
+        font-family: $default-font-family;
+    }
+
+    &--secondary{
+        font-family: $secondary-font-family;
+    }
+}

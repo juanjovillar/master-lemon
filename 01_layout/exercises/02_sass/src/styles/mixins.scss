@@ -1,0 +1,28 @@
+@mixin light-color($percent: 0){
+    background-color: lighten($base-color, $percent * 10);
+}
+
+@mixin dark-color($percent: 0){
+    background-color: darken($base-color, $percent * 10);
+}
+
+@mixin center-text($height: 0){
+    height: $height;
+    line-height: $height;    
+    text-align: center;
+}
+
+@mixin text-ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin box-shadow($side, $color) {
+    @if $side == 'left' {	    
+	    box-shadow: -1em 1em 1em $color;			
+    } 
+    @else {	    
+		box-shadow: 1em 1em 0.5em $color;		
+	}
+}
