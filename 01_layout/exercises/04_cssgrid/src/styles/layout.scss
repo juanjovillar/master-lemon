@@ -1,0 +1,31 @@
+@mixin base-grid {
+    display: grid;  
+    grid: repeat(2, 50vh) / 10% 1fr 2fr 10%;     
+    grid-template-areas: ". navbar section-1 ."
+                         ". navbar section-2 .";
+}
+
+@mixin extra-large-resolution{
+    @include base-grid;
+}
+
+@mixin large-resolution{    
+    @include base-grid;
+    grid: repeat(2, 50vh) / 5% 1fr 2fr 5%;     
+}
+
+@mixin medium-resolution{    
+    @include base-grid;
+    grid: 20vh 40vh 40vh / 1fr; 
+    grid-template-areas: "navbar"
+                         "section-1"
+                         "section-2";
+}
+
+@mixin small-resolution{
+    @include base-grid;    
+    grid: 4vh 48vh 48vh / 1fr; 
+    grid-template-areas: "navbar"
+                         "section-1"
+                         "section-2";
+}

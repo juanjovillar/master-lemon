@@ -1,0 +1,36 @@
+@import "variables";
+@import "mixins";
+
+body{
+    font-family: $base-font-family;
+}
+
+h1{
+    text-align: center;
+}
+
+.palette{
+    width: $base-width;
+    text-align: center;
+}
+
+.palette__step {    
+    display: inline-block;
+    width: 10%;
+    height: 10em;    
+    line-height: 10em;
+    background-color: $base-color;    
+    color: $base-text-color;
+    text-align: center;
+    @include text-ellipsis;
+}
+
+@for $index from 1 through 4 {
+    .palette__step--light-#{$index} {
+        @include light-color($index);
+    }
+
+    .palette__step--dark-#{$index} {
+        @include dark-color($index);
+    }
+}
