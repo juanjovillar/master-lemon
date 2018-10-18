@@ -1,3 +1,3 @@
 export function getExerciseTitle(scores){
-    return "Ex. FLEXBOX";    
+    return "Ex. CSS GRID";    
 }
