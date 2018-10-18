@@ -1,0 +1,73 @@
+@import "mixins";
+@import "layout";
+
+html,
+body {
+    height: 100vh;
+    @include reset-spacing;
+}
+
+.grid-container {
+    @include extra-large-resolution;    
+    border: solid 4px black;    
+}
+
+.grid-item {        
+    box-sizing: border-box;
+    font-size: 1.2em;    
+}
+
+.navbar {
+    background-color: pink;
+    grid-area: navbar;    
+    display: flex;
+    flex-flow: column wrap;   
+    justify-content: space-around;
+    @include reset-spacing;
+}
+
+.section-1{
+    background-color: yellow;
+    grid-area: section-1;
+    @include reset-spacing;
+}
+
+.section-2{
+    background-color: blue;
+    grid-area: section-2;
+    @include reset-spacing;
+}
+
+
+// Large resolution
+@media screen and (max-width: 73.5rem) {
+    .grid-container {
+        @include large-resolution;  
+    }
+}
+
+
+// Medium resolution
+@media screen and (max-width: 54rem) {
+    .grid-container {
+        @include medium-resolution;  
+    }
+    
+    .navbar {        
+        flex-flow: row nowrap;          
+        align-items: center; 
+    }
+}
+
+
+// Small resolution
+@media screen and (max-width: 29rem) {
+    .grid-container {
+        @include small-resolution;  
+    }
+
+    .navbar {        
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
