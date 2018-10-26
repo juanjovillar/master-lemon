@@ -6,7 +6,11 @@
 // TIP: Existe un método de Array.prototype que te ayudará a buscar según un patrón
 
 function isBookRead(books, titleToSearch) {
-  // Implementation here
+  var found = books.find(function(book){
+    return book.title == titleToSearch;
+  });
+
+  return found && found.isRead || false;
 }
 
 // Ejemplo:

@@ -3,9 +3,30 @@
 // Crea una función tal que, dado un número entero de inicio (from) y otro de fin (to),
 // encuentre los números primos entre ellos y los muestre por pantalla.
 
-function showPrimes(from, to) {
-  // Implementation here.
+function isPrime(primeCandidate) {
+  if (primeCandidate === 1 || primeCandidate === 0){
+    return false;
+  }
+
+  var candidateSqrt = Math.sqrt(primeCandidate);
+  for (var i = 2; i <= candidateSqrt; i++) {
+    if (primeCandidate % i === 0) {
+      return false;
+    }   
+  }
+
+  return true;
 }
+
+function showPrimes(from, to) {
+  for (var i = from; i <= to; i++) {
+    isPrime(i) 
+      ? console.log(i + " is PRIME!")
+      : console.log(i + " is not a prime");      
+  }
+}  
+
+showPrimes(1, 10);
 
 // Asi pues, la salida desde el 1 al 10 sería:
 // 1 is not a prime

@@ -7,6 +7,19 @@ var secret = "sq esqct rts moh egf sql lgsxeogftl tl dqlztkstdgfegrtpqcqlekohzyx
 var plain = "abcdefghijklmnopqrstuvwxyz";
 var cipher = "qwertyuiopasdfghjklzxcvbnm";
 
-function decrypt(secret) {
-  // Implementation here.
-};
+
+function decypherChar(char) {
+  if (char !== " ") {
+    char = plain[cipher.indexOf(char)];
+  }
+  return char;
+}
+
+function decypherSecret(secret) {
+  return secret
+    .split('')
+    .map(decypherChar)
+    .join('');
+}
+
+console.log(decypherSecret(secret));

@@ -2,8 +2,10 @@
 
 // Crear una función que reciba un array y un valor y devuelva un booleano indicando si el valor está dentro del array
 
+// Solucion
+//--------------------------------------------------------------------------
 function includes(haystack, needle) {
-  // Implementation here
+  return haystack.indexOf(needle) > -1;
 }
 
 // Ejemplo:

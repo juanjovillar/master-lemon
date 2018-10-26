@@ -3,6 +3,12 @@
 // A. Implementa una función clone que devuelva un objeto clonado a partir de otro:
 function clone(source) {
   // Implementation here.
+  var clonedObj = {};
+  for (var key in source){    
+      clonedObj[key] = source[key];    
+  }
+
+  return clonedObj;
 } 
 
 // B. Dados dos objetos cualesquiera, implementa una función "merge" que mezcle uno sobre otro.
@@ -11,6 +17,14 @@ function clone(source) {
 
 function merge(source, target) {
   // Implementation here.
+  var mergedObj = clone(source);  
+  for (prop in target){
+    if (mergedObj[prop] === undefined){
+      mergedObj[prop] = target[prop]
+    }
+  }
+
+  console.log(mergedObj);
 }
 
 // Por ejemplo, dados estos 2 objetos:

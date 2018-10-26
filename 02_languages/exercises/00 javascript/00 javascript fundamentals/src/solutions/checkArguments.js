@@ -16,3 +16,14 @@ function f(input) {
   }
   return result;
 };
+
+
+//Solucion
+//--------------------------------------------------------------------------
+function check(input) {
+  return input ? input : input === null ? "" : "Unknow";
+};
+
+console.log(check("Patata"));
+console.log(check(null));
+console.log(check(a));

@@ -6,5 +6,7 @@
 // Ejemplo: "Uno dos tres" --> "tres dos Uno"
 
 function reverseText(text) {
-  // Implementation here.
+  return text.split(" ").reverse().join(" ");
 };
+
+console.log(reverseText("Esto es una cadena de texto invertida"));
