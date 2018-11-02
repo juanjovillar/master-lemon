@@ -24,7 +24,6 @@ console.log(a, b);
 
 console.log(a, b);
 
-
 // B. Sin tocar ninguno de los 'console.log' anteriores, modifica ligeramente el
 // código para que muestre la siguiente secuencia:
 
@@ -34,3 +33,28 @@ console.log(a, b);
 // 5
 // 5 6
 // 1 2
+
+
+//SOLUCION 
+
+let a = 1, 
+    b = 2;
+{
+  let b = 3;
+  try {
+      console.log(a, b);
+  } catch(error) {}
+  
+  console.log(a, b);
+}
+
+console.log(a, b);
+
+(() => {
+  let a = 5, 
+      b = 6;
+  console.log(a);    
+  console.log(a, b);
+})();
+
+console.log(a, b);

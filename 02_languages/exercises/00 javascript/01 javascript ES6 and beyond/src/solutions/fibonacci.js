@@ -17,16 +17,20 @@
 // TIP: También se puede abordar con recursividad, pero buscamos una solución
 // iterativa para hacer uso de destructuring con múltiples asignaciones.
 
-const fib = (n) => {
-  let current = 1;
-  let last = 0;
+const fibonacci = (n) => {
+  if (n <= 1) {
+      return n;
+  }
+  
+  let total = 1,
+      last = 0;
 
-  if ( n < 0 ) return NaN;
-  if ( n <= 1 ) return n;
-
-  for ( let i = 1; i < n; i++ ) {
-      [current, last] = [current + last, current];
+  for (let index = 1; index < n; index++) {
+      console.log(last);
+      [total, last] = [total + last, total];
   }
 
-  return current;
+  return total;
+
 }
+console.log(fibonacci(7));

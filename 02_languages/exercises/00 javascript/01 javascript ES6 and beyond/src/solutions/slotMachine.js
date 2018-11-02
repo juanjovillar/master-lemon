@@ -11,12 +11,35 @@
 
 // Ejemplo de uso:
 class SlothMachine {
-  /* ... */
+  constructor() {
+    this.coins = 0;
+  }
+  
+  _rollReel() {
+      return Math.random() >= 0.5;
+  }
+
+  _rollAll(){
+      return [this._rollReel(), this._rollReel(), this._rollReel()];
+  }
+
+  play() {
+    this.coins++;
+    let result = this._rollAll();
+    console.log(result);
+
+    if (result.every(reel => reel === true)){
+        console.log(`"Congratulations!!!. You won ${this.coins} coins!!"`);
+        this.coins = 0;
+    }
+    else{
+      console.log("Good luck next time!!");        
+    }  
+  }   
 }
 
 const machine1 = new SlothMachine();
-machine1.play(); // "Good luck next time!!"
-machine1.play(); // "Good luck next time!!"
-machine1.play(); // "Congratulations!!!. You won 3 coins!!"
-machine1.play(); // "Good luck next time!!"
-machine1.play(); // "Congratulations!!!. You won 2 coins!!"
+machine1.play(); 
+while (machine1.coins > 0){
+  machine1.play();
+};

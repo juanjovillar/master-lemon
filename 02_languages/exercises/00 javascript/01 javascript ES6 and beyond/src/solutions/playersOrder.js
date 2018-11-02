@@ -7,8 +7,18 @@
 // TIP: Aunque se puede resolver con el operador %, intenta idear una solución usando
 // spread/rest & destructuring.
 
-const getPlayersOrder = (players, turns) => { /* Implementation here */ }
+const getPlayersOrder = (players, turns) => {
+    let newOrder = [...players];
+    for (let index = 0; index < turns; index++) {
+        [first, ...rest] = [...newOrder]        
+        newOrder = [...rest, first];
+    }
+    return newOrder;
+}
 
 // Un ejemplo:
 const newOrderIn2Turns = getPlayersOrder(["Ana", "Juan", "Pablo", "Lucia"], 2);
 console.log(newOrderIn2Turns); // ["Pablo", "Lucia", "Ana", "Juan"]
+
+const newOrderIn4Turns = getPlayersOrder(["Ana", "Juan", "Pablo", "Lucia"], 4);
+console.log(newOrderIn4Turns); // ["Pablo", "Lucia", "Ana", "Juan"]
