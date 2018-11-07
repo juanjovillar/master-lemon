@@ -17,11 +17,9 @@ function clone(source) {
 
 function merge(source, target) {
   // Implementation here.
-  var mergedObj = clone(source);  
-  for (prop in target){
-    if (mergedObj[prop] === undefined){
-      mergedObj[prop] = target[prop]
-    }
+  var mergedObj = clone(target);  
+  for (prop in source){    
+      mergedObj[prop] = source[prop]
   }
 
   console.log(mergedObj);
