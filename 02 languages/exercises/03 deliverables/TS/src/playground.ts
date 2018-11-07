@@ -1,0 +1,1 @@
+console.log("Sustituya el codigo de playground.ts por el ejercicio evaluar dentro de la carpeta /solutions");
