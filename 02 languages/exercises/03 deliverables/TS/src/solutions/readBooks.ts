@@ -6,24 +6,21 @@
 // Un libro es un objeto con title como string y isRead como booleano. En caso de no existir el libro devolver false
 // TIP: Existe un método de Array.prototype que te ayudará a buscar según un patrón
 
-const isBookRead = (books, titleToSearch) => {
-  var found = books.find((book) => book.title == titleToSearch);
-  return found && found.isRead || false;
+interface Book {
+    title: string,
+    isRead: boolean,
+}
+
+const isBookRead = (books : Array<Book>, titleToSearch: string): boolean => {
+    var found = books.find((book) => book.title == titleToSearch);
+    return found && found.isRead || false;
 }
 
 // Ejemplo:
-const books = [{
-    title: "Harry Potter y la piedra filosofal",
-    isRead: true
-  },
-  {
-    title: "Canción de hielo y fuego",
-    isRead: false
-  },
-  {
-    title: "Devastación",
-    isRead: true
-  },
+const books: Array<Book> = [
+    { title: "Harry Potter y la piedra filosofal", isRead: true },
+    { title: "Canción de hielo y fuego", isRead: false },
+    { title: "Devastación", isRead: true },
 ];
 
 console.log(isBookRead(books, "Devastación")); // true
