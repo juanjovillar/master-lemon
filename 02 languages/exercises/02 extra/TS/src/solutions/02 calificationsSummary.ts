@@ -44,7 +44,7 @@ const getTopCalification: top = (califications) => {
   return califications.reduce(compare, 0)
 }
 
-const summarizeStudent: studentSummarizer = (student) => {
+const summarizeStudent: studentSummarizer = (student : student) => {
   return {
       name : student.name,
       highestCalification: getTopCalification(student.califications),
