@@ -1,0 +1,1 @@
+console.log("Sustituya el codigo de playground.js por el ejercicio evaluar dentro de la carpeta /solutions");
