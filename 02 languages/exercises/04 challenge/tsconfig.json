@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "esnext",
-    "watch": true
+    "module": "es6",
+    "moduleResolution": "node",
+    "declaration": false,
+    "noImplicitAny": false,
+    "jsx": "react",
+    "sourceMap": true,
+    "noLib": false,
+    "suppressImplicitAnyIndexErrors": true
   },
   "compileOnSave": true,
   "exclude": [
@@ -10,5 +16,5 @@
   ],
   "include": [
     "src/**/*.ts"
-  ]
+  ],
 }
